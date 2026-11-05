@@ -19,4 +19,8 @@ Teste menu, atalhos, retorno ao topo e expansão de métodos e perguntas por toq
 
 ## Antes de publicar
 
-Conclua a revisão clínica e editorial, confira as referências e valide os pontos municipais em aberto. Após autorização expressa, configure o GitHub Pages para servir a raiz da branch aprovada. Configure e verifique domínio, DNS, HTTPS e redirecionamentos, revise a regra de indexação da versão de teste e só então gere e teste o QR Code definitivo.
+Conclua a revisão clínica e editorial, confira as referências e valide os pontos municipais em aberto.
+
+Mantenha `<meta name="robots" content="noindex, nofollow">` no `index.html` durante o desenvolvimento e a revisão. Antes da publicação, revise essa diretiva e confirme a regra de indexação desejada para o lançamento.
+
+Após autorização expressa, configure o GitHub Pages para servir a raiz da branch aprovada. Verifique domínio, DNS, HTTPS e redirecionamentos. Gere e teste o QR Code definitivo quando o endereço de produção estiver funcionando.

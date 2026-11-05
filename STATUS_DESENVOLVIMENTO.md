@@ -86,3 +86,12 @@ Para abrir a versão fora do ambiente desta conversa, baixe ou clone a branch de
 - Testes essenciais de navegação e responsividade executados. Nenhum problema crítico identificado nos cenários testados.
 - Faltam a revisão editorial e clínica, a confirmação do link do ECA e a cobertura complementar de acessibilidade.
 - Próxima prioridade: fechar essas verificações e levar a versão à aprovação, mantendo o site em prévia local.
+
+## 10. Verificações posteriores ao checkpoint · 5 de novembro de 2026
+
+- **Zoom e teclado.** O Chrome confirmou zoom nativo de 200%. Nessa ampliação, foi possível navegar até as perguntas frequentes, focar a primeira pergunta com Tab e abrir a resposta para leitura. No navegador do Codex, foram verificados Tab e Shift+Tab, foco visível, Escape no menu e os 20 controles de expansão por Enter ou Espaço. A árvore de acessibilidade confirmou os estados aberto e fechado e a exposição condicional do conteúdo no cartão de DIU.
+- **Integridade.** O HTML foi reconferido com a v0.9. O navegador confirmou oito áreas, 16 FAQs, 29 referências e âncoras internas sem destinos ausentes. O conteúdo clínico foi preservado.
+- **ECA.** O endereço original do Planalto abriu a Lei nº 8.069/1990 em navegação direta. A referência foi preservada.
+- **Lighthouse mobile 13.0.1.** Desempenho 99 → 100, acessibilidade 100 → 100 e boas práticas 100 → 100. SEO 63 nas duas rodadas por causa da diretiva de bloqueio de indexação mantida para a revisão. A ilustração passou a usar dois tamanhos WebP e, na auditoria mobile, o arquivo baixado caiu de 99.695 para 16.558 bytes. O apontamento de entrega da imagem deixou de aparecer.
+- **Capturas integrais.** A versão otimizada foi capturada a 390 × 33.079 px e 1280 × 18.962 px com os cartões recolhidos. As capturas foram entregues na conversa.
+- **Pendências.** Permanecem a revisão editorial e clínica e a validação complementar com leitor de tela dedicado e dispositivos físicos. O Lighthouse apontou oportunidades relacionadas a cache e folha de estilos na prévia. A configuração de cache e compressão deve ser medida no ambiente de produção após autorização. O README registra a revisão de `noindex, nofollow` antes do lançamento.
