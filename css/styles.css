@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
-  --background: #f8f8f4;
+  --background: #fcfcf8;
   --surface: #fff;
   --green: #176b50;
   --deep: #164c3b;
-  --ink: #18392e;
-  --body: #2f473f;
+  --ink: #124533;
+  --body: #25362c;
   --muted: #51665c;
   --line: #d8e2d9;
   --gold: #d7a93c;
@@ -48,32 +48,28 @@ svg { flex: none; }
 }
 .skip-link:focus { transform: none; }
 
-.site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+.site-header {
+  position: relative;
+  background: var(--background) url("../assets/faixas.svg") no-repeat right top / clamp(9rem, 35vw, 25rem) auto;
+}
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 3.75rem; }
 .brand, .site-menu summary {
   display: inline-flex;
   align-items: center;
-  gap: .42rem;
+  gap: .45rem;
   min-height: 2.75rem;
   color: var(--ink);
   font-weight: 750;
 }
-.brand { text-decoration: none; letter-spacing: -.04em; font-size: clamp(.96rem, 4vw, 1.34rem); }
-.brand-accent { color: var(--green); }
-.brand-icon, .shortcut-icon {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: .65rem;
-  background: var(--green);
-  color: white;
-}
-.brand-icon svg { width: 1.55rem; height: 1.55rem; }
+.brand { text-decoration: none; line-height: 1.1; }
+.brand img { flex: none; width: clamp(2.15rem, 8vw, 3rem); height: auto; }
+.brand-text { display: grid; gap: .18rem; }
+.brand strong { color: var(--ink); font-size: clamp(1rem, 4.3vw, 1.55rem); letter-spacing: -.045em; }
+.brand strong span { color: #a82d27; }
+.brand small { color: var(--deep); font-size: clamp(.65rem, 2.3vw, .8rem); font-weight: 600; }
 .site-menu { margin-block: .35rem; }
-.site-menu summary { padding: .25rem .6rem; border: 1px solid var(--line); border-radius: .65rem; white-space: nowrap; }
-.site-menu summary svg { width: 1.1rem; height: 1.1rem; }
+.site-menu summary { padding: .25rem .4rem; border-radius: .65rem; white-space: nowrap; background: var(--background); }
+.site-menu summary svg { width: 1.35rem; height: 1.35rem; }
 .site-menu[open] summary { background: #e8f2eb; }
 .site-menu nav {
   position: absolute;
@@ -100,64 +96,90 @@ svg { flex: none; }
 .site-menu a:hover, .site-menu a:focus-visible { background: #e8f2eb; }
 
 .hero {
-  margin-block: .8rem 1rem;
-  padding: clamp(1rem, 4vw, 3.7rem);
-  border-radius: 1.25rem;
-  background: #124d3a url("../assets/caminhos.svg") no-repeat right bottom / auto 100%;
-  color: #fff;
-}
-.hero-copy { max-width: 39rem; }
-.eyebrow {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
   align-items: center;
-  gap: .5rem;
-  margin-bottom: .55rem;
-  color: #fff1cc;
-  font-size: .75rem;
-  font-weight: 750;
-  letter-spacing: .08em;
+  gap: .4rem;
+  margin-block: .65rem 1rem;
 }
-.eyebrow span { width: .55rem; height: .55rem; border-radius: 50%; background: var(--gold); flex: none; }
+.hero-art { display: block; width: 100%; height: auto; }
 .hero h1 {
-  max-width: 14ch;
   margin-block-end: .55rem;
-  color: #fff;
-  font-size: clamp(2rem, 6vw, 4.55rem);
+  font-size: clamp(1.4rem, 6.1vw, 4.25rem);
+  font-weight: 850;
   letter-spacing: -.055em;
-  line-height: 1.02;
+  line-height: 1.1;
 }
-.hero p:last-child { max-width: 45ch; margin: 0; }
+.hero h1 span {
+  padding-inline: .13em;
+  margin-inline-start: -.13em;
+  border-radius: .34em;
+  background: #f9dfa0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hero p { max-width: 44ch; margin: 0; line-height: 1.4; }
+.hero-copy::after {
+  content: "";
+  display: block;
+  width: 2.8rem;
+  height: .18rem;
+  margin-block-start: .65rem;
+  border-radius: 1rem;
+  background: var(--gold);
+  transform: rotate(-4deg);
+}
 
-.quick { margin-block-end: .9rem; }
-.quick h2 { margin-block-end: .5rem; font-size: 1.25rem; }
-.quick ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+.quick { margin-block-end: .8rem; }
+.quick h2, .related h2 { margin-block-end: .55rem; font-size: clamp(1.24rem, 3.2vw, 1.65rem); }
+.quick h2::after {
+  content: "";
+  display: block;
+  width: 2.8rem;
+  height: .15rem;
+  margin-block-start: .22rem;
+  border-radius: 1rem;
+  background: var(--alert-line);
+}
+.quick ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
 .quick li { display: flex; }
 .shortcut {
+  --card-accent: var(--green);
+  --card-bg: #e8f2e8;
   flex: 1;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: .42rem;
+  gap: .4rem;
   min-height: 3.4rem;
-  padding: .45rem;
-  border: 1px solid var(--line);
-  border-inline-start: .22rem solid var(--green);
-  border-radius: .8rem;
-  background: #edf5ed;
+  padding: .52rem .42rem;
+  border-inline-start: .24rem solid var(--card-accent);
+  border-radius: .75rem;
+  background: var(--card-bg);
   color: var(--ink);
-  font-weight: 720;
-  line-height: 1.2;
+  line-height: 1.18;
   text-decoration: none;
 }
-.shortcut:hover { box-shadow: inset 0 0 0 1px var(--green); }
-.shortcut-icon { width: 1.9rem; height: 1.9rem; background: #e4f0e7; color: var(--green); }
-.shortcut-icon svg { width: 1.18rem; height: 1.18rem; }
-.shortcut > svg { display: none; }
-.shortcut--testagem { border-inline-start-color: var(--gold); background: #faf5e7; }
-.shortcut--testagem .shortcut-icon { background: #f5e7bc; color: #694909; }
-.shortcut--urgencia { border-inline-start-color: var(--alert-line); background: #fcf0eb; }
-.shortcut--urgencia .shortcut-icon { background: var(--alert-bg); color: var(--alert); }
-.shortcut--sus .shortcut-icon { background: #fbefd0; color: #694909; }
+.shortcut:hover { box-shadow: inset 0 0 0 1px var(--card-accent); }
+.shortcut--testagem { --card-accent: #805905; --card-bg: #f9f1dd; border-inline-start-color: var(--gold); }
+.shortcut--urgencia { --card-accent: #a82d27; --card-bg: #faeae6; }
+.shortcut-icon { display: grid; place-items: center; color: var(--card-accent); }
+.shortcut-icon svg { width: clamp(1.35rem, 5.2vw, 2.8rem); height: auto; }
+.shortcut-copy { display: grid; gap: .23rem; }
+.shortcut strong { font-size: clamp(.94rem, 2.2vw, 1.17rem); font-weight: 800; }
+.shortcut small, .about-link small { color: var(--body); font-size: .82rem; line-height: 1.22; }
+.shortcut-arrow {
+  display: none;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  color: white;
+  background: var(--card-accent);
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 750;
+}
 
 .urgent {
   display: flex;
@@ -177,30 +199,71 @@ svg { flex: none; }
 .urgent a { color: var(--alert); margin-block-end: .2rem; }
 .urgent a svg, .top-link svg { width: 1.1rem; height: 1.1rem; }
 
-.related { margin-block-start: 1.15rem; }
-.related h2 { margin-block-end: .45rem; font-size: 1.2rem; }
+.related { margin-block: 1rem; }
 .related ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
-  gap: .45rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .2rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .related li { display: flex; }
+.related li + li { border-inline-start: 1px solid var(--line); }
 .related a {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: .55rem .7rem;
+  gap: .3rem;
+  padding: .2rem;
   min-height: 2.75rem;
-  border: 1px solid var(--line);
-  border-radius: .65rem;
-  background: var(--surface);
-  font-weight: 650;
-  line-height: 1.3;
+  border-radius: .5rem;
+  color: var(--ink);
+  font-size: clamp(.76rem, 2.7vw, 1rem);
+  font-weight: 730;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
 }
-.related a:hover { background: #edf5ed; }
+.related a:hover { text-decoration: underline; }
+.related-icon {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.15rem;
+  border-radius: .65rem;
+  color: var(--green);
+  background: #e8f2e8;
+}
+.related-icon svg { width: 1.5rem; height: 1.5rem; }
+.related li:nth-child(2) .related-icon { color: #805905; background: #f9f1dd; }
+.related li:nth-child(3) .related-icon { color: #a82d27; background: #faeae6; }
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .7rem;
+  border-radius: .75rem;
+  background: #e8f2e8;
+  color: var(--ink);
+  line-height: 1.25;
+  text-decoration: none;
+}
+.about-link:hover strong { text-decoration: underline; }
+.about-link small { display: block; margin-block-start: .2rem; }
+.about-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: .13rem solid currentColor;
+  border-radius: 50%;
+  font-weight: 800;
+}
+.about-arrow { margin-inline-start: auto; font-size: 1.6rem; line-height: 1; }
 
 .topics { display: grid; gap: 1rem; margin-block: 1.65rem 2.25rem; }
 .topic { min-width: 0; padding: clamp(.8rem, 3vw, 2.1rem); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
@@ -259,35 +322,34 @@ details[open] > summary::after { transform: rotate(225deg); }
 .references { padding-inline-start: 1.65rem; }
 .references li { padding: .65rem 0 .65rem .25rem; border-block-start: 1px solid var(--line); }
 
-.site-footer { background: #e7efe6; padding: 1rem 0 1.5rem; }
+.site-footer {
+  background: #e7efe6 url("../assets/caminhos.svg") no-repeat center bottom / max(100%, 46rem) auto;
+  padding: 1rem 0 clamp(7.5rem, 17vw, 14rem);
+}
 .site-footer h2 { margin-block: .6rem; font-size: 1.35rem; }
 .site-footer p { max-width: 76ch; }
 .site-footer p:last-child { margin-bottom: 0; color: var(--muted); }
 
-@media (max-width: 47.99rem) {
-  .hero { background-image: linear-gradient(90deg, #124d3a 18%, #124d3acc 65%, #124d3a80), url("../assets/caminhos.svg"); }
+@media (max-width: 22rem) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(0, .76fr); }
+  .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: .5rem; }
+  .related li:nth-child(3) { border-inline-start: 0; }
 }
 
 @media (min-width: 48rem) {
-  .wrap { width: min(100% - 3rem, 72rem); }
-  .hero { margin-block: 1.5rem; }
-  .quick ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; }
-  .shortcut { padding: .75rem; gap: .6rem; min-height: 4.6rem; }
-  .shortcut-icon { width: 2.4rem; height: 2.4rem; }
-  .urgent { padding: 1rem 1.15rem; gap: .8rem; }
-  .urgent h2 { font-size: 1.2rem; }
+  .wrap { width: min(100% - 3rem, 65rem); }
+  .site-menu nav { inset-inline-end: max(1.5rem, (100% - 65rem) / 2); }
+  .hero { margin-block: 1rem 1.25rem; gap: 1.4rem; }
+  .hero p { font-size: 1.08rem; }
+  .hero-art { max-width: 30rem; justify-self: end; }
+  .quick ul { gap: .65rem; }
+  .shortcut { grid-template-columns: auto minmax(0, 1fr) auto; padding: .7rem .8rem; gap: .65rem; }
+  .shortcut-arrow { display: grid; }
+  .urgent { padding: .85rem 1.1rem; gap: .8rem; }
+  .urgent h2 { font-size: 1.15rem; }
   .topics { gap: 1.2rem; margin-block: 2rem 3rem; }
 }
 
-@media (min-width: 48rem) and (max-width: 63.99rem) {
-  .hero { background-image: linear-gradient(90deg, #124d3a, #124d3a00), url("../assets/caminhos.svg"); }
-}
-
-@media (min-width: 64rem) {
-  .shortcut { grid-template-columns: auto minmax(0, 1fr) auto; }
-  .shortcut > svg { display: block; width: 1.1rem; height: 1.1rem; color: var(--green); }
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .shortcut, .site-menu a { transition: background-color .15s, border-color .15s; }
+  .shortcut, .site-menu a { transition: box-shadow .15s, background-color .15s; }
 }

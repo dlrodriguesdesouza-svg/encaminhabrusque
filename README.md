@@ -9,7 +9,7 @@ Na raiz do repositório, rode `python3 -m http.server 8000 --bind 127.0.0.1` e a
 - `index.html` reúne as oito áreas, 16 perguntas frequentes e 29 referências.
 - `css/styles.css` define o layout responsivo e os estados dos controles.
 - `js/main.js` fecha o menu ao escolher um tema ou pressionar Escape.
-- `assets/` contém a marca e o grafismo original em SVG.
+- `assets/` contém a marca, os grafismos em SVG e a ilustração do cabeçalho.
 
 ## Atualizar e testar
 
