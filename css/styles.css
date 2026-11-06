@@ -65,12 +65,14 @@ svg { flex: none; }
   color: var(--ink);
   font-weight: 750;
 }
-.brand { text-decoration: none; line-height: 1.1; }
-.brand img { flex: none; width: clamp(2.15rem, 8vw, 3rem); height: auto; }
-.brand-text { display: grid; gap: .18rem; }
-.brand strong { color: var(--ink); font-size: clamp(1rem, 4.3vw, 1.55rem); letter-spacing: -.045em; }
+/* Identidade Saúde Sexual e Reprodutiva: marca responsiva, com texto acessível. */
+.brand { flex: 1 1 auto; min-width: 0; text-decoration: none; line-height: 1.1; }
+.brand img { flex: none; width: clamp(2.6rem, 8vw, 3.6rem); height: auto; }
+.brand-text { display: grid; gap: .18rem; min-width: 0; }
+.brand strong { color: var(--ink); font-size: clamp(.98rem, 3.4vw, 1.65rem); letter-spacing: -.045em; }
 .brand strong span { color: #a82d27; }
-.brand small { color: var(--deep); font-size: clamp(.65rem, 2.3vw, .8rem); font-weight: 600; }
+.brand small { color: var(--deep); font-size: clamp(.61rem, 1.8vw, .84rem); font-weight: 600; line-height: 1.25; }
+.site-menu { flex: 0 0 auto; }
 .site-menu { margin-block: .35rem; }
 .site-menu summary { padding: .25rem .4rem; border-radius: .65rem; white-space: nowrap; background: var(--background); }
 .site-menu summary svg { width: 1.35rem; height: 1.35rem; }
