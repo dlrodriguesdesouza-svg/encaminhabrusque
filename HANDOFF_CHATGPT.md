@@ -1,5 +1,7 @@
 # EncaminhaBrusque · handoff para continuidade no ChatGPT
 
+> **Atualização de continuidade — 6 de novembro de 2026.** Este handoff documenta o estado de 5/11 e deve ser lido em conjunto com o [checklist de lançamento](CHECKLIST_LANCAMENTO.md), a [auditoria pré-publicação](AUDITORIA_PRE_PUBLICACAO.md) e o [histórico atualizado da branch](https://github.com/dlrodriguesdesouza-svg/encaminhabrusque/commits/feat/hotsite-v1/). **A v1.0 foi criada**: https://docs.google.com/document/d/1OQJp_Yp4nFqUQM-chrmc8f8c8WSMAkbsZTc1XyI69yo/edit. As duas passagens sobre DIU após violência sexual foram qualificadas, e foi acrescentada a fonte 23 do CDC às duas chamadas de contraindicações. Contagem vigente: **8 áreas, 16 FAQs, 29 referências, 115 grupos e 196 links individuais de citação**. `_config.yml` exclui arquivos Markdown editoriais do site gerado pelo Jekyll, **mas não os torna privados no repositório público**. O PR #1 continua em rascunho. As instruções abaixo que ainda mandam criar a v1.0 são históricas e foram superadas.
+
 ## 1. Estado exato
 
 - [Repositório](https://github.com/dlrodriguesdesouza-svg/encaminhabrusque) · [branch `feat/hotsite-v1` e HEAD atual](https://github.com/dlrodriguesdesouza-svg/encaminhabrusque/commits/feat/hotsite-v1/) · [PR #1 em rascunho](https://github.com/dlrodriguesdesouza-svg/encaminhabrusque/pull/1).
