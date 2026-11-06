@@ -1,0 +1,14 @@
+# Arquivos editoriais e de desenvolvimento ficam no repositório,
+# mas não devem ser incluídos no site gerado pelo GitHub Pages (Jekyll).
+# O repositório permanece PÚBLICO: esta lista NÃO torna documentos privados.
+exclude:
+  - README.md
+  - AUDITORIA_PRE_PUBLICACAO.md
+  - CHECKLIST_LANCAMENTO.md
+  - CREDITOS_VISUAIS.md
+  - HANDOFF_CHATGPT.md
+  - STATUS_DESENVOLVIMENTO.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
