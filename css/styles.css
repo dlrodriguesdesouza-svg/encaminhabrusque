@@ -517,15 +517,15 @@ details[open] > summary::after { transform: rotate(225deg); }
   background: #173c38;
 }
 .edu-video__load {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: .7rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
   width: 100%;
   height: 100%;
   min-height: 10rem;
-  padding: .75rem;
+  padding: 0;
+  overflow: hidden;
   border: 0;
   color: #fff;
   background: #173c38;
@@ -533,9 +533,28 @@ details[open] > summary::after { transform: rotate(225deg); }
   cursor: pointer;
   font: inherit;
 }
-.edu-video__load:hover { background: #22544d; }
+.edu-video__thumbnail {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.edu-video__load::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background: linear-gradient(180deg, #00000024 0%, #0000000a 35%, #000000b0 100%);
+  pointer-events: none;
+}
+.edu-video__load:hover .edu-video__thumbnail { transform: scale(1.035); }
 .edu-video__load:focus-visible { outline: .2rem solid #f9dfa0; outline-offset: -.35rem; }
 .edu-video__play {
+  position: relative;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 3.2rem;
@@ -546,10 +565,23 @@ details[open] > summary::after { transform: rotate(225deg); }
   background: #fff;
   font-size: 1.25rem;
   line-height: 1;
+  box-shadow: 0 .15rem .8rem #00000055;
 }
-.edu-video__load-copy { display: grid; gap: .15rem; }
-.edu-video__load-copy strong { font-size: clamp(.85rem, 2.8vw, 1rem); line-height: 1.25; }
-.edu-video__load-copy small { font-size: .75rem; line-height: 1.25; opacity: .9; }
+.edu-video__load-copy {
+  position: absolute;
+  z-index: 2;
+  inset-inline: .5rem;
+  bottom: .65rem;
+  display: grid;
+  gap: .1rem;
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+}
+.edu-video__load-copy strong { font-size: clamp(.86rem, 2.5vw, 1rem); line-height: 1.2; }
+.edu-video__load-copy small { font-size: .73rem; line-height: 1.2; }
+@media (prefers-reduced-motion: no-preference) {
+  .edu-video__thumbnail { transition: transform .2s ease-out; }
+}
 .edu-video__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .edu-video__meta { margin: .55rem 0 0; color: var(--muted); font-size: .8rem; line-height: 1.45; }
 .edu-video__alert {
