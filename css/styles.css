@@ -323,6 +323,36 @@ svg { flex: none; }
 .topic--urgencia .topic-index { background: var(--alert-bg); color: var(--alert); }
 .safety-note { padding: .75rem; border-inline-start: .22rem solid var(--alert-line); border-radius: .45rem; background: var(--alert-bg); }
 .method { padding: .85rem; margin-block-end: .6rem; border: 1px solid var(--line); border-radius: .75rem; background: #fbfcf9; }
+/* Pílulas: duas explicações e um vídeo dentro de um único cartão. */
+.method-group--pills {
+  margin-block-end: .85rem;
+  padding: .85rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: #fbfcf9;
+}
+.method-group--pills > .method {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.method-group--pills > .method + .method {
+  margin-block-start: .85rem;
+  padding-block-start: .85rem;
+  border-block-start: 1px solid var(--line);
+}
+.method-group--pills > .edu-video {
+  width: 100%;
+  max-width: 48rem;
+  margin-block: .85rem 0;
+  padding: .85rem 0 0;
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
 .with-icon {
   display: flex;
   align-items: center;
