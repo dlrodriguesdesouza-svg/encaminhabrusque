@@ -319,6 +319,21 @@ details[open] > summary::after { transform: rotate(225deg); }
 .faq { padding-inline: .8rem; border: 1px solid var(--line); border-radius: .7rem; margin-block-end: .5rem; }
 .faq[open] { background: #f4f9f4; }
 .faq .disclosure { padding-block-end: .85rem; }
+.citacao {
+  font-size: .75em;
+  line-height: 0;
+  white-space: nowrap;
+}
+.citacao a {
+  padding-inline: .16em;
+  font-weight: 700;
+  text-underline-offset: .12em;
+}
+.references li:target {
+  background: #e8f2e8;
+  outline: 2px solid var(--green);
+  outline-offset: .2rem;
+}
 .references { padding-inline-start: 1.65rem; }
 .references li { padding: .65rem 0 .65rem .25rem; border-block-start: 1px solid var(--line); }
 
