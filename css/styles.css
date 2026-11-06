@@ -292,8 +292,6 @@ svg { flex: none; }
   line-height: 1.43;
 }
 .transparency-more {
-  display: inline-block;
-  margin-block-start: .2rem;
   color: #294b63;
   font-size: .83rem;
   font-weight: 700;
