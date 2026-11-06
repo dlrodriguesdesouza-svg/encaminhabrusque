@@ -7,7 +7,7 @@
 - **Em andamento:** revisão de qualidade pré-publicação, conferência bibliográfica e validação editorial e clínica para aprovação.
 - **Não iniciado:** ativação do GitHub Pages, configuração de produção do domínio e do HTTPS, lançamento e QR Code definitivo.
 - **Progresso por evidência:** implementação funcional completa no escopo do MVP, com 8 de 8 áreas e os componentes previstos presentes. Testes essenciais executados no navegador do Codex, com cobertura complementar parcial. Prontidão para publicação ainda pendente de revisão e autorização expressa. Sem percentual global, pois essas etapas não têm pesos definidos.
-- **Dificuldades:** o primeiro visual divergiu da preferência do usuário e foi refeito com base no mockup. O link do ECA não pôde ser confirmado pelo endereço do Planalto. Persistem ressalvas de documentação municipal já registradas na auditoria.
+- **Dificuldades:** o primeiro visual divergiu da preferência do usuário e foi refeito com base no mockup. Persistem ressalvas de documentação municipal já registradas na auditoria.
 
 ## 2. GitHub
 
@@ -34,7 +34,7 @@
 | Quatro atalhos principais | Concluído | Métodos, testagem, relação desprotegida e acesso pelo SUS. Testagem usa o ícone de prancheta. |
 | Cartões expansíveis | Concluído | Elementos nativos `details` e `summary` para perguntas e métodos selecionados. |
 | Rodapé | Concluído | Aviso do briefing, revisão editorial de 05/11/2026 e retorno ao topo. |
-| Referências | Concluído | 29 entradas presentes. A checagem de acesso de uma das URLs segue pendente. |
+| Referências | Concluído | 29 entradas presentes. O endereço do ECA no Planalto foi confirmado no navegador. |
 
 ## 4. Fidelidade aos documentos
 
@@ -50,14 +50,14 @@
 | Responsividade | **Aprovado nos cenários testados.** Prévia em 320, 375, 390, 768 e 1280 px, sem rolagem horizontal. Na medição mais recente, o atalho urgente terminou entre 623 e 776 px do topo. As áreas, FAQs e referências permaneceram presentes. |
 | Âncoras e navegação | **Aprovado.** Todos os destinos internos existem. Testes de interação cobriram menu, atalhos principais e complementares, salto ao conteúdo, urgência e retorno ao topo. |
 | Expansões e teclado | **Aprovado nos controles testados.** Abertura e fechamento de FAQ por Espaço, método por clique, seleção por Enter, Escape no menu e foco na seção de destino. A inspeção de navegação por teclado foi amostral. |
-| Contraste e legibilidade | **Parcial.** Inspeção visual mobile e desktop e cálculos pontuais em pares da versão inicial. O fundo mais claro do grafismo antigo ficou abaixo de 4,5:1 e foi ajustado naquela versão. O redesign usa outra paleta. Auditoria sistemática da paleta atual, zoom de 200% e leitor de tela dedicado estão **não verificados**. |
-| Links externos | **Parcial.** As 26 URLs coincidem com o Docs. 25 retornaram HTTP 200 na rodada de checagem. O link do ECA no Planalto excedeu o tempo e a consulta automatizada foi bloqueada. Três referências municipais são entradas bibliográficas sem URL na fonte. |
+| Contraste e legibilidade | **Verificação parcial.** O zoom nativo de 200% foi confirmado no Chrome. Dez combinações de contraste da paleta atual passaram nos limiares aplicados. Permanece a avaliação complementar com leitor de tela dedicado e aparelho físico. |
+| Links externos | **Conferidos.** As 26 URLs coincidem com o Docs. 25 retornaram HTTP 200 na rodada automatizada e o endereço original do ECA abriu a Lei nº 8.069/1990 em navegação direta. Três referências municipais são entradas bibliográficas sem URL na fonte. |
 | JavaScript | **Aprovado nos fluxos testados.** O console ficou sem erros nos testes de menu, âncoras e cartões. |
-| Performance | **Parcial.** Os arquivos usados pela página somam cerca de 178 kB em disco, sem bibliotecas externas. Esse valor não é uma medição de transferência ou desempenho. Lighthouse, rede móvel simulada e testes em aparelhos físicos estão **não verificados**. |
+| Performance | **Lighthouse mobile executado.** Desempenho 100, acessibilidade 100 e boas práticas 100 após a otimização da ilustração. SEO 63 com o bloqueio de indexação ativo. Cache e compressão em produção serão medidos após autorização de publicação. |
 
 ## 6. Prévia visual
 
-Capturas reais do checkpoint, com o ícone atualizado, acompanham o relatório na conversa. Mobile em **390 × 844 px** e desktop em **1280 × 900 px**.
+Capturas reais em **390 × 844 px** e **1280 × 900 px** foram entregues na conversa para revisão independente. A série mobile cobre cabeçalho, atalhos, aviso de urgência, métodos de longa duração, testagem e rodapé. A série desktop cobre o cabeçalho e a abertura das oito áreas.
 
 Para abrir a versão fora do ambiente desta conversa, baixe ou clone a branch de desenvolvimento e rode `python3 -m http.server 8000 --bind 127.0.0.1` na raiz do repositório. Abra [a prévia local](http://127.0.0.1:8000/). No computador usado para desenvolvimento, a sessão do Codex serviu a página em [127.0.0.1:8765](http://127.0.0.1:8765/). Ambas são prévias locais, sem GitHub Pages.
 
@@ -67,10 +67,9 @@ Para abrir a versão fora do ambiente desta conversa, baixe ou clone a branch de
 |---|---|---|
 | **P0** | Nenhum defeito crítico identificado nos cenários testados. | Tratar como P0 qualquer diferença clínica substantiva ou falha que oculte orientação urgente encontrada na revisão de `index.html`. |
 | **P1** | Aprovação editorial e clínica pendente. | Validar com os responsáveis prazos, contraindicações, urgência, adolescentes, cuidados e ressalvas municipais. Conferir com a v0.9 e o documento-mestre, em `index.html`. |
-| **P1** | URL do ECA sem confirmação de acesso. | Verificar o endereço do Planalto em acesso convencional e registrar o resultado. Se necessário, submeter um endereço oficial alternativo à revisão editorial de `index.html`. |
-| **P1** | Cobertura complementar de acessibilidade e dispositivos incompleta. | Verificar contraste da paleta atual, zoom de 200%, leitor de tela, foco e alvos de toque em pelo menos um aparelho real. Ajustar `css/styles.css` e `index.html` se houver falha. |
+| **P1** | Validação complementar de acessibilidade e dispositivos. | Verificar com leitor de tela dedicado e conferir foco e alvos de toque em aparelho físico. Ajustar `css/styles.css` e `index.html` se houver falha. |
 | **P1, após aprovação** | Publicação e infraestrutura de produção pendentes. | Somente após autorização expressa, revisar indexação, configurar Pages, domínio, DNS e HTTPS, verificar redirecionamentos e gerar e testar o QR Code. O fluxo está em `README.md`. |
-| **P2** | Sem medição de desempenho em rede móvel. | Executar Lighthouse mobile se disponível e usar o resultado para decidir se `assets/pessoas.jpg` ou outros recursos precisam de refinamento. |
+| **P2, após autorização** | Cache e compressão de produção ainda sem medição. | Verificar os cabeçalhos e as transferências no ambiente publicado. |
 
 ## 8. Orientação para uma revisão independente
 
@@ -84,7 +83,7 @@ Para abrir a versão fora do ambiente desta conversa, baixe ou clone a branch de
 - MVP implementado, funcional e salvo em uma branch com PR em rascunho.
 - Oito áreas, 16 FAQs e 29 referências conferidas com a v0.9.
 - Testes essenciais de navegação e responsividade executados. Nenhum problema crítico identificado nos cenários testados.
-- Faltam a revisão editorial e clínica, a confirmação do link do ECA e a cobertura complementar de acessibilidade.
+- Faltam a revisão editorial e clínica e a validação complementar com leitor de tela e aparelhos físicos.
 - Próxima prioridade: fechar essas verificações e levar a versão à aprovação, mantendo o site em prévia local.
 
 ## 10. Verificações posteriores ao checkpoint · 5 de novembro de 2026
