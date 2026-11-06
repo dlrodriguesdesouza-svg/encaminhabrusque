@@ -501,6 +501,7 @@ details[open] > summary::after { transform: rotate(225deg); }
   clear: both;
   max-width: 48rem;
   margin-block: 1rem;
+  margin-inline: auto;
   padding: .8rem;
   border: 1px solid #ceddd5;
   border-radius: .8rem;
