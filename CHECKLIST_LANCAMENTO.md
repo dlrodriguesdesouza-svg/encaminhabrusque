@@ -73,3 +73,14 @@
 - `index.html` ainda contém `noindex, nofollow`, sem `CNAME` configurado no código examinado.
 - Hospedagem Pages e estado atual dos DNS **não foram verificáveis com a permissão de leitura disponível nesta rodada**; não inferir que estão ativos.
 - Documento público v1.0 já foi atualizado para a mesma redação: https://docs.google.com/document/d/1OQJp_Yp4nFqUQM-chrmc8f8c8WSMAkbsZTc1XyI69yo/edit.
+
+## G. Resultado da verificação pré-merge (6 de novembro de 2026)
+
+- [x] **Código e estrutura revisados em leitura:** 8 áreas, 16 FAQs, 115 grupos de citações, 29 entradas bibliográficas, âncoras existentes, SVGs e WebPs presentes; nenhuma chamada numérica sem destino. Não foi executado novo teste em celular físico.
+- [x] **Rastreabilidade reforçada:** as duas passagens de DIU/IST receberam a citação adicional 23 (CDC). Contagem atual: **196 links de citação** em 115 grupos; mesmo mapeamento no Google Docs v1.0. Revalidar após futuros ajustes de HTML.
+- [x] **Empacotamento de documentos:** `_config.yml` exclui arquivos Markdown editoriais do site montado pelo Jekyll. **Atenção:** eles continuam acessíveis no próprio repositório público. Após publicar, confirmar que os endereços desses documentos no domínio retornam 404 e que `index.html`, `css/`, `js/` e `assets/` carregam normalmente.
+- [x] **Fonte alternativa oficial para ECA encontrada:** texto atualizado da Câmara: https://www2.camara.leg.br/legin/fed/lei/1990/lei-8069-13-julho-1990-372211-normaatualizada-pl.html. Acesso automático ao Planalto foi bloqueado, mas o link original foi mantido.
+- [ ] **Teste manual de dois links no navegador:** abrir a referência 21 (Planalto) e a referência 6 (PDF Implanon da Wiki de Brusque). A segunda teve *timeout* automático; não inferir quebra de URL.
+- [ ] **Homologação clínica e acessibilidade:** revisão clínica independente e testes de leitor de tela/dispositivo físico permanecem pendentes. A decisão de divulgação deve registrar expressamente essas limitações e não alegar certificação.
+
+**Nenhuma alteração nesta etapa autoriza merge ou publicação.**
