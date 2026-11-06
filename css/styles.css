@@ -179,7 +179,7 @@ svg { flex: none; }
 .shortcut-icon svg { width: clamp(1.35rem, 5.2vw, 2.8rem); height: auto; }
 .shortcut-copy { display: grid; gap: .23rem; }
 .shortcut strong { font-size: clamp(.94rem, 2.2vw, 1.17rem); font-weight: 800; }
-.shortcut small, .about-link small { color: var(--body); font-size: .82rem; line-height: 1.22; }
+.shortcut small { color: var(--body); font-size: .82rem; line-height: 1.22; }
 .shortcut-arrow {
   display: none;
   place-items: center;
@@ -253,30 +253,52 @@ svg { flex: none; }
 .related li:nth-child(2) .related-icon { color: #805905; background: #f9f1dd; }
 .related li:nth-child(3) .related-icon { color: #a82d27; background: #faeae6; }
 
-.about-link {
+.transparency {
   display: flex;
-  align-items: center;
-  gap: .7rem;
-  padding: .7rem;
-  border-radius: .75rem;
-  background: #e8f2e8;
-  color: var(--ink);
-  line-height: 1.25;
-  text-decoration: none;
+  align-items: flex-start;
+  gap: .65rem;
+  margin-block: 0 1rem;
+  padding: .75rem .9rem;
+  border: 1px solid #c7d9e6;
+  border-inline-start: .25rem solid #5b829e;
+  border-radius: .8rem;
+  background: #eaf2f7;
+  color: #294b63;
 }
-.about-link:hover strong { text-decoration: underline; }
-.about-link small { display: block; margin-block-start: .2rem; }
-.about-icon {
+.transparency-icon {
   display: grid;
   flex: none;
   place-items: center;
   width: 1.65rem;
   height: 1.65rem;
+  margin-block-start: .05rem;
   border: .13rem solid currentColor;
   border-radius: 50%;
+  font-size: .92rem;
   font-weight: 800;
+  line-height: 1;
 }
-.about-arrow { margin-inline-start: auto; font-size: 1.6rem; line-height: 1; }
+.transparency-content { min-width: 0; }
+.transparency h2 {
+  margin: 0 0 .2rem;
+  color: #294b63;
+  font-size: 1.08rem;
+  letter-spacing: -.02em;
+}
+.transparency p {
+  max-width: 95ch;
+  margin: 0;
+  font-size: .87rem;
+  line-height: 1.43;
+}
+.transparency-more {
+  display: inline-block;
+  margin-block-start: .2rem;
+  color: #294b63;
+  font-size: .83rem;
+  font-weight: 700;
+  text-underline-offset: .18em;
+}
 
 .topics { display: grid; gap: 1rem; margin-block: 1.65rem 2.25rem; }
 .topic { min-width: 0; padding: clamp(.8rem, 3vw, 2.1rem); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
