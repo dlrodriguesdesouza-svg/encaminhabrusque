@@ -1,4 +1,6 @@
 # EncaminhaBrusque · checkpoint de desenvolvimento
+
+> **Nota de atualização (6/11/2026):** este documento é um checkpoint histórico produzido a partir da base `660f366`. A implementação e as auditorias continuaram depois. Para o estado vigente, consulte [HANDOFF_CHATGPT.md](HANDOFF_CHATGPT.md), [AUDITORIA_PRE_PUBLICACAO.md](AUDITORIA_PRE_PUBLICACAO.md), [CHECKLIST_LANCAMENTO.md](CHECKLIST_LANCAMENTO.md) e o [Google Docs v1.0](https://docs.google.com/document/d/1OQJp_Yp4nFqUQM-chrmc8f8c8WSMAkbsZTc1XyI69yo/edit). Contagens atuais: 115 grupos, 196 links de citação e 29 referências. As etapas subsequentes corrigiram as orientações sobre violência sexual e acrescentaram a referência 23 do CDC às duas passagens pertinentes. Nenhum merge ou publicação foi autorizado.
 **Data:** 5 de novembro de 2026 · **Base técnica:** `660f366`
 
 ## 1. Estado geral do projeto
