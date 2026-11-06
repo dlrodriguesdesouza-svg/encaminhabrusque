@@ -33,3 +33,20 @@ document.addEventListener('click', (event) => {
   citation.id = 'citacao-atual';
   document.getElementById(citation.hash.slice(1)).append(citationReturn);
 });
+
+/* Carrega o player do YouTube somente após o clique da pessoa usuária. */
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('.edu-video__load[data-video-id]');
+  if (!button) return;
+  const id = button.dataset.videoId;
+  if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
+
+  const frame = document.createElement('iframe');
+  frame.title = button.dataset.videoTitle || 'Vídeo educativo do YouTube';
+  frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+  frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  frame.allowFullscreen = true;
+  button.parentElement.replaceChildren(frame);
+  frame.focus();
+});
