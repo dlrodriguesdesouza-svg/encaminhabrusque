@@ -343,16 +343,6 @@ svg { flex: none; }
   padding-block-start: .85rem;
   border-block-start: 1px solid var(--line);
 }
-.method-group--pills > .edu-video {
-  width: 100%;
-  max-width: 48rem;
-  margin-block: .85rem 0;
-  padding: .85rem 0 0;
-  border: 0;
-  border-block-start: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-}
 .with-icon {
   display: flex;
   align-items: center;
@@ -527,15 +517,23 @@ details[open] > summary::after { transform: rotate(225deg); }
 }
 
 /* Vídeos educativos: player é carregado apenas após ação explícita da pessoa usuária. */
+/* Todos os vídeos seguem o mesmo visual limpo do grupo de pílulas:
+   uma divisória, sem cartão adicional, mantendo o player centralizado. */
 .edu-video {
   clear: both;
+  width: 100%;
   max-width: 48rem;
-  margin-block: 1rem;
+  margin-block: .85rem 0;
   margin-inline: auto;
-  padding: .8rem;
-  border: 1px solid #ceddd5;
-  border-radius: .8rem;
-  background: #f2f7f4;
+  padding: .85rem 0 0;
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+/* Seções textuais independentes mantêm respiro antes do próximo assunto. */
+.topic-content > .edu-video {
+  margin-block-end: 1.15rem;
 }
 .edu-video__title { margin: 0 0 .45rem; color: var(--deep); font-size: 1.06rem; line-height: 1.35; }
 .edu-video__description { margin-block: 0 .7rem; font-size: .94rem; line-height: 1.5; }
