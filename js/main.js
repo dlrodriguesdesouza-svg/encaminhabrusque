@@ -5,6 +5,13 @@ menu.addEventListener('click', (event) => {
   if (event.target.closest('a[href^="#"]')) menu.open = false;
 });
 
+menu.addEventListener('focusout', (event) => {
+  const nextFocus = event.relatedTarget;
+  if (menu.open && nextFocus && !menu.contains(nextFocus)) {
+    menu.open = false;
+  }
+});
+
 menu.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && menu.open) {
     menu.open = false;
