@@ -2,10 +2,20 @@
 
 | Material | Autoria e origem | Situação de direitos e alterações |
 |---|---|---|
-| `assets/marca.svg` | Marca e favicon desenhados em SVG durante o desenvolvimento do EncaminhaBrusque, com apoio do ChatGPT e base visual no mockup aprovado do projeto. | O SVG foi produzido no projeto. A autoria do mockup e as condições de uso de sua marca de referência ainda precisam ser confirmadas. |
-| `assets/pessoas-384.webp` e `assets/pessoas-760.webp` | Ilustração do cabeçalho gerada com a ferramenta de imagem da OpenAI a partir do mockup aprovado fornecido pelo projeto. | A ilustração foi redimensionada e convertida para WebP. A autoria e a autorização de uso do mockup como referência para essa recriação ainda precisam ser confirmadas. |
+| `assets/marca.svg` | Marca e favicon desenhados em SVG durante o desenvolvimento do EncaminhaBrusque, com apoio do ChatGPT e base visual no mockup aprovado do projeto. | O SVG foi produzido no projeto. O responsável declarou que o mockup de referência foi gerado pelo ChatGPT; não houve conferência independente do histórico original. |
+| `assets/pessoas-384.webp` e `assets/pessoas-760.webp` | Ilustração do cabeçalho gerada com a ferramenta de imagem da OpenAI a partir do mockup aprovado fornecido pelo projeto. | A ilustração foi redimensionada e convertida para WebP. Segundo o responsável, o mockup que serviu de referência também foi gerado no ChatGPT; a procedência histórica completa não foi verificada. |
 | `assets/faixas.svg` e `assets/caminhos.svg` | Faixas do cabeçalho e paisagem do rodapé desenhadas em SVG durante o desenvolvimento, com apoio do ChatGPT. Seguem a linguagem visual do mockup e representam elementos da paisagem de Brusque. | Não há registro de arquivo externo incorporado a esses SVGs. A licença de redistribuição dos grafismos ainda não foi definida. |
 | Ícones embutidos no `index.html` e `assets/icones-educativos.svg` | Ícones vetoriais criados no projeto. Os ícones educativos de testagem e cuidados reaproveitam traços dos atalhos do próprio hotsite. | Não há registro de biblioteca ou arquivo de terceiros. A licença de redistribuição ainda não foi definida. |
 | `assets/diu-esquema.svg` e `assets/implante-esquema.svg` | Ilustrações vetoriais originais produzidas no desenvolvimento do EncaminhaBrusque. | Esquemas sem escala. Nenhuma figura foi reproduzida de protocolos, manuais ou catálogos. A licença de redistribuição ainda não foi definida. |
 
-Antes da publicação, identificar a autoria e a procedência do mockup e documentar a autorização aplicável à marca e à ilustração recriada. Registrar também os termos de redistribuição escolhidos para os elementos originais do projeto.
+A procedência do mockup foi declarada pelo responsável, com as limitações documentais registradas abaixo. Não é necessário escolher licença aberta para publicação dos próprios elementos no hotsite; decidir sobre redistribuição por terceiros é opcional.
+
+## Declaração de procedência e condições de uso — 6 de novembro de 2026
+
+O responsável pelo EncaminhaBrusque informou que, **segundo sua lembrança**, o mockup aprovado, a marca e as imagens utilizadas como referência foram todos gerados pelo ChatGPT durante o planejamento do próprio projeto. Esta informação é uma declaração de procedência; não foi feita inspeção independente de todos os prompts, arquivos de origem ou eventuais imagens externas que tenham sido usadas como entrada.
+
+A marca e os SVGs foram desenvolvidos no contexto do projeto e a ilustração do cabeçalho foi recriada pela ferramenta de imagens da OpenAI com base no mockup aprovado. **Não há, nos registros de desenvolvimento consultados, indicação de incorporação intencional de imagens comerciais ou obras externas**; isso não é garantia jurídica de inexistência de similaridades ou de direitos de terceiros.
+
+Os [Termos de Uso da OpenAI](https://openai.com/pt-BR/policies/terms-of-use/) atribuem ao usuário os direitos da saída perante a OpenAI, na extensão da lei aplicável, sem dispensar o respeito a direitos de terceiros e sem assegurar exclusividade da imagem gerada. Não é exigida licença aberta para usar no próprio site os elementos legitimamente controlados pelo projeto. **A ausência de uma licença de redistribuição não impede, por si só, a publicação do hotsite**; eventual permissão de reutilização por terceiros deve ser tratada separadamente.
+
+**Estado da pendência:** origem declarada pelo responsável e documentação atualizada; revisão posterior recomendada caso se descubra que o mockup continha uma imagem de terceiros ou caso a marca seja utilizada em parceria institucional. A análise de distintividade e eventual registro de marca não foi realizada.
