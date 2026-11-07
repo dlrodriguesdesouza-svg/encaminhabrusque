@@ -730,6 +730,7 @@ details[open] > summary::after { transform: rotate(225deg); }
   font-size: .88rem;
   line-height: 1.45;
 }
+.edu-video__frame + .edu-video__alert { margin-block-start: .6rem; }
 .edu-video__update {
   display: flex;
   align-items: flex-start;
