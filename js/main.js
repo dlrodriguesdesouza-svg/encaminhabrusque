@@ -2,7 +2,7 @@ const menu = document.querySelector('.site-menu');
 const menuControl = menu.querySelector('summary');
 
 menu.addEventListener('click', (event) => {
-  if (event.target.closest('a[href^="#"]')) menu.open = false;
+  if (event.target.closest('a[href]')) menu.open = false;
 });
 
 menu.addEventListener('focusout', (event) => {
@@ -19,20 +19,62 @@ menu.addEventListener('keydown', (event) => {
   }
 });
 
-const citationReturn = document.createElement('a');
-citationReturn.className = 'citation-return';
-citationReturn.href = '#citacao-atual';
-citationReturn.textContent = 'Voltar à citação';
+const movedSections = new Map([
+  ['metodos.html', [
+    'metodos', 'metodos-titulo', 'cuidados', 'cuidados-titulo',
+    'video-diu-titulo', 'video-implanon-titulo', 'video-pilulas-titulo',
+    'video-injetavel-mensal-titulo', 'video-injetavel-trimestral-titulo',
+    'video-preservativos-titulo', 'video-vasectomia-titulo', 'video-laqueadura-titulo',
+    'video-cuidados-diu-titulo', 'video-cuidados-implanon-titulo'
+  ]],
+  ['testagem-e-prevencao.html', [
+    'testagem', 'testagem-titulo', 'prevencao', 'prevencao-titulo', 'prep-pep',
+    'video-testes-titulo', 'video-vacina-hepatite-b-titulo', 'video-vacina-hpv-titulo',
+    'video-pep-prevencao-titulo', 'video-prep-prevencao-titulo'
+  ]],
+  ['urgencia.html', ['urgencia', 'urgencia-titulo', 'video-prep-titulo']],
+  ['referencias.html', ['referencias', 'referencias-titulo']]
+]);
 
-document.addEventListener('click', (event) => {
-  const citation = event.target.closest('.citacao a');
-  if (!citation || event.defaultPrevented ||
-      event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+function openLinkedSection() {
+  const anchor = location.hash.slice(1);
+  if (!anchor) return;
 
-  document.getElementById('citacao-atual')?.removeAttribute('id');
-  citation.id = 'citacao-atual';
-  document.getElementById(citation.hash.slice(1)).append(citationReturn);
-});
+  if (document.body.hasAttribute('data-links-antigos')) {
+    for (const [page, sections] of movedSections) {
+      if (sections.includes(anchor) || (page === 'referencias.html' && /^ref-(?:[1-9]|[12]\d)$/.test(anchor))) {
+        location.replace(page + location.hash);
+        return;
+      }
+    }
+  }
+
+  const target = document.getElementById(anchor);
+  if (!target) return;
+
+  let openedDetails = false;
+  let details = target.closest('details:not([open])');
+  while (details) {
+    details.open = true;
+    openedDetails = true;
+    details = details.parentElement.closest('details:not([open])');
+  }
+  if (openedDetails) requestAnimationFrame(() => target.scrollIntoView());
+
+  const origin = new URLSearchParams(location.search).get('origem') || '';
+  if (target.parentElement.matches('.references') &&
+      /^(index|metodos|testagem-e-prevencao|urgencia)\.html#citacao-\d+$/.test(origin) &&
+      !target.querySelector('.citation-return')) {
+    const citationReturn = document.createElement('a');
+    citationReturn.className = 'citation-return';
+    citationReturn.href = origin;
+    citationReturn.textContent = 'Voltar à citação';
+    target.append(citationReturn);
+  }
+}
+
+openLinkedSection();
+window.addEventListener('hashchange', openLinkedSection);
 
 /* Carrega o player do YouTube somente após o clique da pessoa usuária. */
 document.addEventListener('click', (event) => {

@@ -29,11 +29,14 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html CNAME _site/
+          pages=(index.html metodos.html testagem-e-prevencao.html urgencia.html videos.html referencias.html)
+          cp "${pages[@]}" CNAME _site/
           cp -R css js assets _site/
-          test -s _site/index.html
+          for page in "${pages[@]}"; do
+            test -s "_site/$page"
+            grep -Fq 'noindex, nofollow' "_site/$page"
+          done
           test -s _site/CNAME
-          grep -Fq 'noindex, nofollow' _site/index.html
           grep -Fqx 'encaminhabrusque.com.br' _site/CNAME
           echo "Publishing only site assets; editorial documents remain out of the Pages artifact."
 
