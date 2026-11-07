@@ -346,6 +346,26 @@ nav.topic-navigation a:hover { border-color: #ad977a; background: #fffdf8; }
 @media (min-width: 64rem) {
   nav.topic-navigation--videos ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+nav.topic-navigation--methods a {
+  min-height: 3.75rem;
+  padding: .7rem;
+  gap: .5rem;
+  font-size: .88rem;
+}
+.topic-navigation--methods .topic-navigation-icon {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+.topic-navigation--methods .topic-navigation-icon svg { width: 1.2rem; height: 1.2rem; }
+nav.topic-navigation--methods .topic-navigation-secondary { margin-block-start: .65rem; }
+nav.topic-navigation--methods .topic-navigation-secondary a { background: transparent; }
+nav.topic-navigation--methods .topic-navigation-secondary a:hover { background: #faf6ee; }
+@media (min-width: 22.5rem) {
+  nav.topic-navigation--methods ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  nav.topic-navigation--methods > ul:first-of-type { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 .video-guidance { margin-block: .6rem; font-size: .94rem; }
 @media (min-width: 48rem) {
   .video-library .topic-content {
