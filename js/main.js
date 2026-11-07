@@ -81,6 +81,32 @@ function openLinkedSection() {
 openLinkedSection();
 window.addEventListener('hashchange', openLinkedSection);
 
+const backToTop = document.createElement('button');
+backToTop.type = 'button';
+backToTop.className = 'back-to-top';
+backToTop.hidden = true;
+backToTop.setAttribute('aria-label', 'Voltar ao topo');
+backToTop.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>';
+document.body.append(backToTop);
+
+const mobileViewport = window.matchMedia('(max-width: 47.99rem)');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function updateBackToTop() {
+  backToTop.hidden = !mobileViewport.matches || window.scrollY < window.innerHeight * 2;
+}
+
+backToTop.addEventListener('click', () => {
+  document.getElementById('topo').focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+});
+
+window.addEventListener('scroll', updateBackToTop, { passive: true });
+window.addEventListener('resize', updateBackToTop);
+window.addEventListener('pageshow', updateBackToTop);
+mobileViewport.addEventListener('change', updateBackToTop);
+updateBackToTop();
+
 /* Carrega o player do YouTube somente após o clique da pessoa usuária. */
 document.addEventListener('click', (event) => {
   const button = event.target.closest('.edu-video__load[data-video-id]');
