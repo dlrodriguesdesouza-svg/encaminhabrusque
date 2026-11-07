@@ -1,14 +1,19 @@
 const menu = document.querySelector('.site-menu');
 const menuControl = menu.querySelector('summary');
 
-menu.addEventListener('click', (event) => {
-  if (event.target.closest('a[href]')) menu.open = false;
+// Mantém o link visível até o navegador concluir sua ativação no Safari.
+// Ao abrir uma página ou restaurá-la pelo botão Voltar, o menu começa fechado.
+window.addEventListener('pageshow', () => {
+  menu.open = false;
 });
 
 menu.addEventListener('focusout', (event) => {
   const nextFocus = event.relatedTarget;
   if (menu.open && nextFocus && !menu.contains(nextFocus)) {
-    menu.open = false;
+    // No toque, o Safari pode focar o cabeçalho antes de ativar o link.
+    setTimeout(() => {
+      if (!menu.contains(document.activeElement)) menu.open = false;
+    }, 0);
   }
 });
 
