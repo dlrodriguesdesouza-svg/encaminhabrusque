@@ -252,6 +252,10 @@ svg { flex: none; }
   background: #f7f9fa;
   color: #354954;
 }
+/* Espaçamento do aviso no início do conteúdo das páginas internas. */
+.page-heading + .transparency,
+.visually-hidden + .transparency { margin-block: 1.65rem 0; }
+
 .transparency-icon {
   display: grid;
   flex: none;

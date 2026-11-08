@@ -13,6 +13,8 @@ Na raiz do repositório, rode `python3 -m http.server 8000 --bind 127.0.0.1` e a
 
 ## Atualizar e testar
 
+O cartão de transparência tem uma única fonte em `_includes/transparencia.html`. Depois de editá-la, execute `python3 scripts/sync_transparency.py` na raiz do site para atualizar as seis páginas. O aviso fica gravado nos HTMLs e aparece mesmo sem JavaScript.
+
 Altere a redação clínica apenas após revisão da fonte editorial vigente. Preserve citações, prazos, ressalvas, alertas visíveis e os identificadores das seções, usados pelas âncoras. Confira os links bibliográficos, a data da revisão e eventuais campanhas com data de término.
 
 Teste menu, atalhos, retorno ao topo e expansão de métodos e perguntas por toque e teclado. Em telas de 320 a 1280 px, verifique o foco visível, a leitura do aviso de urgência e a ausência de rolagem horizontal. Confira as 16 perguntas, 29 referências e o console do navegador.

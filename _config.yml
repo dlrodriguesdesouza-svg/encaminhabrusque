@@ -8,6 +8,7 @@ exclude:
   - CREDITOS_VISUAIS.md
   - HANDOFF_CHATGPT.md
   - STATUS_DESENVOLVIMENTO.md
+  - scripts
   - Gemfile
   - Gemfile.lock
   - node_modules
