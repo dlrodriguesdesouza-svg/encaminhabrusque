@@ -269,7 +269,7 @@ svg { flex: none; }
   font-weight: 800;
   line-height: 1;
 }
-.transparency-content { min-width: 0; }
+.transparency-content { flex: 1; min-width: 0; }
 .transparency h2 {
   margin: 0 0 .2rem;
   color: inherit;
@@ -277,7 +277,7 @@ svg { flex: none; }
   letter-spacing: -.02em;
 }
 .transparency p {
-  max-width: 95ch;
+  max-width: none;
   margin: 0;
   font-size: .87rem;
   line-height: 1.43;
